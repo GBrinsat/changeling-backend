@@ -1,3 +1,7 @@
+//deployment
+require('dotenv').config();
+
+
 // ℹ️ package responsible to make the connection with mongodb
 // https://www.npmjs.com/package/mongoose
 const mongoose = require("mongoose");
