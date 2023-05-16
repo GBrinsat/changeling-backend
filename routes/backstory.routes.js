@@ -39,14 +39,16 @@ router.post("/backstories/create", (req, res, next) => {
 //generate backstory with chatGPT
 
 router.get("/backstories/generate", async (req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*")
+  res.setHeader("Access-Control-Allow-Credentials", "true")
+  res.setHeader("Access-Control-Max-Age", "1800")
+  res.setHeader("Access-Control-Allow-Headers", "content-type")
+  res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" )
+  
     try {
     const backstoryId = req.headers.id
     const characterId = req.headers.character
-    res.setHeader("Access-Control-Allow-Origin", "*")
-    res.setHeader("Access-Control-Allow-Credentials", "true")
-    res.setHeader("Access-Control-Max-Age", "1800")
-    res.setHeader("Access-Control-Allow-Headers", "content-type")
-    res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" )
+    
 
     async function generatePrompt(){
         const characterResponse = await Character.findById(characterId)
