@@ -22,9 +22,9 @@ module.exports = (app) => {
   app.set("trust proxy", 1);
 
   // controls a very specific header to pass headers from the frontend
-  app.options("/api", cors(), (req,res) => {
+ /*  app.options("/api", cors(), (req,res) => {
     res.sendStatus(204)
-  })
+  }) */
   
   app.use(
     cors({

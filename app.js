@@ -23,7 +23,7 @@ const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
 const backstoryRoutes = require("./routes/backstory.routes")
-app.use("/backstory", isAuthenticated ,backstoryRoutes)
+app.use("/backstory"/* , isAuthenticated */ ,backstoryRoutes)
 
 const authRoutes = require("./routes/auth.routes")
 app.use("/auth", authRoutes)
