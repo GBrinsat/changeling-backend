@@ -59,7 +59,6 @@ router.put("/update/:id", (req, res, next) => {
 router.post("/delete", (req, res, next) => {
 
     const {id, backstoryId, userId} = req.body
-    console.log(id)
 
             User.findByIdAndUpdate(userId, {
                 $pull: {character: id},
@@ -82,7 +81,6 @@ router.get("/find/:characterId", (req, res, next) => {
 
     Character.findById(characterId)
         .then(response => {
-            console.log(response)
             res.json(response)
         })
         .catch(error => res.json(error))
