@@ -21,6 +21,11 @@ const characterSchema = new Schema({
         cha: Number,
         chamod: Number
     },
+    armorclass: Number,
+    hpmax: Number,
+    hpcurrent: Number,
+    initiative: Number,
+    speed: Number,
     background: String,
     alignment: String,
     backstory: [{type: Schema.Types.ObjectId, ref: 'Backstory'}]        

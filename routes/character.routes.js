@@ -30,9 +30,14 @@ router.post("/create", (req, res, next) => {
             wismod: 0, 
             cha: 10, 
             chamod: 0},
-            background: "",
-            alignment: "",
-            backstory: []
+        armorclass: 10,
+        hpmax: 6,
+        hpcurrent: 6,
+        initiative: 0,
+        speed: 30,
+        background: "",
+        alignment: "",
+        backstory: []
         })
         .then((newCharacter) => {
             return User.findByIdAndUpdate(user, {
