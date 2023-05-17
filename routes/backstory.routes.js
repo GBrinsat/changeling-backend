@@ -14,7 +14,7 @@ const openai = new OpenAIApi(configuration)
 
 //create backstory and add to character
 
-router.post("/backstories/create", (req, res, next) => {
+router.post("/create", (req, res, next) => {
 
     const {option1, option2, option3, character} = req.body
 
@@ -38,7 +38,7 @@ router.post("/backstories/create", (req, res, next) => {
 
 //generate backstory with chatGPT
 
-router.get("/backstories/generate", async (req, res, next) => {
+router.get("/generate", async (req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*")
   res.setHeader("Access-Control-Allow-Credentials", "true")
   res.setHeader("Access-Control-Max-Age", "1800")
@@ -121,7 +121,7 @@ router.get("/backstories/generate", async (req, res, next) => {
 
 //find backstory
 
-router.get("/backstories/:id", (req, res, next) => {
+router.get("/:id", (req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
     res.setHeader("Access-Control-Allow-Credentials", "true")
     res.setHeader("Access-Control-Max-Age", "1800")
@@ -138,7 +138,7 @@ router.get("/backstories/:id", (req, res, next) => {
 
 //update backstory
 
-router.put("/backstories/:id", (req, res, next) => {
+router.put("/:id", (req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
     res.setHeader("Access-Control-Allow-Credentials", "true")
     res.setHeader("Access-Control-Max-Age", "1800")
